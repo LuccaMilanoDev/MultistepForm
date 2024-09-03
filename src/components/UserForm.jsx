@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserForm = () => {
+const UserForm = ({ data, upadateFieldHandler }) => {
   return (
     <div>
       <div className="form-control">
@@ -11,6 +11,8 @@ const UserForm = () => {
           id="name"
           placeholder="Digite seu nome"
           required
+          value={data.name || ""}
+          onChange={(e) => upadateFieldHandler("name", e.target.value)}
         />
       </div>
       <div className="form-control">
@@ -21,6 +23,8 @@ const UserForm = () => {
           id="email"
           placeholder="Digite seu nome"
           required
+          value={data.email || ""}
+          onChange={(e) => upadateFieldHandler("email", e.target.value)}
         />
       </div>
     </div>
